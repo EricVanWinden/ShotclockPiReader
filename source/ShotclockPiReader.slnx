@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="ShotclockPiReader.UnitTests/ShotclockPiReader.UnitTests.csproj" Id="4f449116-3ed9-4aab-b932-3ea070f33e65" />
+  <Project Path="ShotclockPiReader.WinForm/ShotclockPiReader.WinForm.csproj" />
+</Solution>
