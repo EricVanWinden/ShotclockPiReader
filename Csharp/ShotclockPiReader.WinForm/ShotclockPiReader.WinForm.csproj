@@ -8,4 +8,8 @@
     <ImplicitUsings>disable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ShotclockPiReader\ShotclockPiReader.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -14,5 +14,4 @@ bld/
 [Oo]bj/
 [Ll]og/
 
-/.vs
-/source/.vs
+**/.vs/

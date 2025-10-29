@@ -1,10 +1,11 @@
+using ShotclockPiReader.Converter;
+using ShotclockPiReader.Messaging;
 using System;
 using System.Text.Json;
-using System.Text.Json.Serialization;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace WinFormsApp1
+namespace ShotclockPiReader.WinForm
 {
     public partial class Main : Form
     {
@@ -22,7 +23,7 @@ namespace WinFormsApp1
         {
             if (!bgwRestApi.IsBusy)
             {
-                rtbLog.AppendText($"Start readuing from {_uri}.\n");
+                rtbLog.AppendText($"Start reading from {_uri}.\n");
                 bgwRestApi.RunWorkerAsync();
             }
             else
@@ -129,7 +130,7 @@ namespace WinFormsApp1
             var worker = sender as System.ComponentModel.BackgroundWorker;
             while (worker != null && !worker.CancellationPending)
             {
-                var json = RestApiReader.GetTime(_uri);
+                var json = RestApiReader.GetMessage(_uri);
                 SetTime(json);
                 Thread.Sleep(50);
             }
@@ -159,19 +160,6 @@ namespace WinFormsApp1
             }
         }
 
-        public class ApiResponse
-        {
-            [JsonPropertyName("time")]
-            public double? Time { get; set; }
 
-            [JsonPropertyName("time_rounded")]
-            public double? TimeRounded { get; set; }
-
-            [JsonPropertyName("utc_time_stamp")]
-            public string UtcTimeStamp { get; set; }
-
-            [JsonPropertyName("status")]
-            public string Status { get; set; }
-        }
     }
 }

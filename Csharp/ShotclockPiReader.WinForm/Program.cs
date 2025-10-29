@@ -1,7 +1,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace WinFormsApp1
+namespace ShotclockPiReader.WinForm
 {
     internal static class Program
     {

@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace WinFormsApp1
+namespace ShotclockPiReader.WinForm
 {
     partial class Main
     {
